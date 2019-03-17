@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package NWitchGRPC.Protobuf;
+
+service Push {
+  rpc Notification (PushRequest) returns (PushResponse) {}
+}
+
+message PushRequest {
+  string nwitch_token = 1;
+  string topic_name = 2;
+  string title = 3;
+  string message = 4;
+}
+
+message PushResponse {
+  bool success = 1;
+}
