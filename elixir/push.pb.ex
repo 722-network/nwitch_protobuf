@@ -1,4 +1,4 @@
-defmodule NWitchGRPCClient.Push.PushRequest do
+defmodule NWitchGRPC.Protobuf.PushRequest do
   @moduledoc false
   use Protobuf, syntax: :proto3
 
@@ -16,7 +16,7 @@ defmodule NWitchGRPCClient.Push.PushRequest do
   field :message, 4, type: :string
 end
 
-defmodule NWitchGRPCClient.Push.PushResponse do
+defmodule NWitchGRPC.Protobuf.PushResponse do
   @moduledoc false
   use Protobuf, syntax: :proto3
 
@@ -28,14 +28,14 @@ defmodule NWitchGRPCClient.Push.PushResponse do
   field :success, 1, type: :bool
 end
 
-defmodule NWitchGRPCClient.Push.Notification.Service do
+defmodule NWitchGRPC.Protobuf.Notification.Service do
   @moduledoc false
-  use GRPC.Service, name: "NWitchGRPCClient.Push.Notification"
+  use GRPC.Service, name: "NWitchGRPC.Protobuf.Notification"
 
-  rpc :Push, NWitchGRPCClient.Push.PushRequest, NWitchGRPCClient.Push.PushResponse
+  rpc :Push, NWitchGRPC.Protobuf.PushRequest, NWitchGRPC.Protobuf.PushResponse
 end
 
-defmodule NWitchGRPCClient.Push.Notification.Stub do
+defmodule NWitchGRPC.Protobuf.Notification.Stub do
   @moduledoc false
-  use GRPC.Stub, service: NWitchGRPCClient.Push.Notification.Service
+  use GRPC.Stub, service: NWitchGRPC.Protobuf.Notification.Service
 end

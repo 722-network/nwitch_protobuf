@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package NWitchGRPCClient.Push;
+package NWitchGRPC.Protobuf;
 
 service Notification {
   rpc Push (PushRequest) returns (PushResponse) {}
