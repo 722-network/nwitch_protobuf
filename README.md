@@ -15,10 +15,10 @@ Install protobuf-elixir as specified [here](https://github.com/tony612/protobuf-
 
 **Compile to Ruby**
 ```
-grpc_tools_ruby_protoc -I . --ruby_out=./ruby/ --grpc_out=./ruby/ *.proto
+$ grpc_tools_ruby_protoc -I . --ruby_out=./ruby/ --grpc_out=./ruby/ *.proto
 ```
 
 **Compile to Elixir**
 ```
-protoc --elixir_out=plugins=grpc:./elixir/ *.proto
+$ protoc --elixir_out=plugins=grpc:./elixir/ *.proto
 ```
